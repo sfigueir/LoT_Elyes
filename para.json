@@ -1,0 +1,55 @@
+{
+    "BASE": "8",
+    "MOVE_AND_PLAY": [
+        "True",
+        "lambda n: 2"
+    ],
+    "PLAY": [
+        "False",
+        "lambda n: 2"
+    ],
+    "MOVE": [
+        "True",
+        "lambda n: 2"
+    ],
+    "REPEAT": [
+        "True",
+        "lambda n: (int(math.log2(n)),1)"
+    ],
+    "REPEAT_JUMP": [
+        "False",
+        "None"
+    ],
+    "REPEAT_APPLY_NOTES": [
+        "True",
+        "lambda n: (int(math.log2(n)),1,1)"
+    ],
+    "REPEAT_APPLY_PEVAL": [
+        "True",
+        "lambda n: (int(math.log2(n)),1,1)"
+    ],
+    "REFLECT": [
+        "False",
+        "None"
+    ],
+    "MIRROR": [
+        "False",
+        "None"
+    ],
+    "MIRROR_BOUNCE": [
+        "False",
+        "None"
+    ],
+    "SUB": [
+        "False",
+        "None"
+    ],
+    "REPEAT_CHUNKS": [
+        "False",
+        "None"
+    ],
+    "POINTERS": [
+        "False",
+        "None"
+    ]
+}
