@@ -1,315 +1,382 @@
 {
-  "my_seq_name": {
-    "sequence": "0000000",
-    "complexity": 4,
-    "minimal_programs": [
-      "[REPEAT(n=7, P=[MOVE_AND_PLAY(n=0)])]"
+  "interpretation": {
+    "description": "Complexities and minimal programs for the input sequences.",
+    "complexity": "The minimum size of a program generating the sequence under the loaded LoT configuration.",
+    "minimal_programs": "The list of all minimal programs found for the sequence."
+  },
+  "loaded_config": {
+    "BASE": "8",
+    "MOVE_AND_PLAY": [
+      "True",
+      "lambda n: 2"
+    ],
+    "PLAY": [
+      "False",
+      "lambda n: 2"
+    ],
+    "MOVE": [
+      "True",
+      "lambda n: 2"
+    ],
+    "REPEAT": [
+      "True",
+      "lambda n: (int(math.log2(n)),1)"
+    ],
+    "REPEAT_JUMP": [
+      "False",
+      "None"
+    ],
+    "REPEAT_APPLY_NOTES": [
+      "True",
+      "lambda n: (int(math.log2(n)),1,1)"
+    ],
+    "REPEAT_APPLY_PEVAL": [
+      "True",
+      "lambda n: (int(math.log2(n)),1,1)"
+    ],
+    "REFLECT": [
+      "False",
+      "None"
+    ],
+    "MIRROR": [
+      "False",
+      "None"
+    ],
+    "MIRROR_BOUNCE": [
+      "False",
+      "None"
+    ],
+    "SUB": [
+      "False",
+      "None"
+    ],
+    "REPEAT_CHUNKS": [
+      "False",
+      "None"
+    ],
+    "POINTERS": [
+      "False",
+      "None"
     ]
   },
-  "Repetition-2": {
-    "sequence": "010101010101",
-    "complexity": 6,
-    "minimal_programs": [
-      "[REPEAT(n=6, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=3, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1)])])]",
-      "[REPEAT(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1)])])]"
-    ]
+  "parameters": {
+    "input_file": "sequences.json",
+    "number_of_sequences": 26,
+    "base": 8
   },
-  "control Repetition-2": {
-    "sequence": "011110010001",
-    "complexity": 19,
-    "minimal_programs": [
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1)]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=1)]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=1)]"
-    ]
-  },
-  "Repetition-3": {
-    "sequence": "012012012012",
-    "complexity": 7,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])])]",
-      "[REPEAT(n=4, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=1))])]",
-      "[REPEAT(n=4, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=1))])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])])])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=1))])])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=1))])])]",
-      "[REPEAT_APPLY_NOTES(n=4, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=0))]",
-      "[REPEAT_APPLY_PEVAL(n=4, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=0))]"
-    ]
-  },
-  "control Repetition-3": {
-    "sequence": "012021120102",
-    "complexity": 20,
-    "minimal_programs": [
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2)]"
-    ]
-  },
-  "Repetition-4": {
-    "sequence": "012301230123",
-    "complexity": 6,
-    "minimal_programs": [
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])])]"
-    ]
-  },
-  "control Repetition-4": {
-    "sequence": "012321300312",
-    "complexity": 19,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1)]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1)]"
-    ]
-  },
-  "Repetition-Nested": {
-    "sequence": "001122001122",
-    "complexity": 8,
-    "minimal_programs": [
-      "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))])]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))])]",
-      "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=0))]",
-      "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)])], jump=MOVE(n=0))]"
-    ]
-  },
-  "control NoLocal nested": {
-    "sequence": "012021012021",
-    "complexity": 12,
-    "minimal_programs": [
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)])]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)])]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)])]",
-      "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))]",
-      "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))]"
-    ]
-  },
-  "control NoGlobal nested": {
-    "sequence": "001122002211",
-    "complexity": 16,
-    "minimal_programs": [
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=-1))]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=0)], jump=MOVE(n=-1))]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=2)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], jump=MOVE(n=2)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)]"
-    ]
-  },
-  "play 4 tokens": {
-    "sequence": "010203010203",
-    "complexity": 13,
-    "minimal_programs": [
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=3)])]"
-    ]
-  },
-  "control play 4 tokens": {
-    "sequence": "010213010213",
-    "complexity": 10,
-    "minimal_programs": [
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2)])])]"
-    ]
-  },
-  "sub-programs 1": {
-    "sequence": "012301210120",
-    "complexity": 16,
-    "minimal_programs": [
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]"
-    ]
-  },
-  "control sub-programs 1": {
-    "sequence": "012302120120",
-    "complexity": 17,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0))]",
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0))]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0))]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0))]"
-    ]
-  },
-  "sub-programs 2": {
-    "sequence": "012301240125",
-    "complexity": 17,
-    "minimal_programs": [
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]"
-    ]
-  },
-  "control sub-programs 2": {
-    "sequence": "012302140125",
-    "complexity": 19,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]"
-    ]
-  },
-  "index i": {
-    "sequence": "010011000111",
-    "complexity": 18,
-    "minimal_programs": [
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], jump=MOVE(n=1))]"
-    ]
-  },
-  "control index i": {
-    "sequence": "000111010011",
-    "complexity": 17,
-    "minimal_programs": [
-      "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
-      "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=1)], appl=MOVE_AND_PLAY(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=1)], appl=MOVE_AND_PLAY(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=1)], jump=MOVE(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
-      "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=1)], jump=MOVE(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]"
-    ]
-  },
-  "play": {
-    "sequence": "000100020003",
-    "complexity": 19,
-    "minimal_programs": [
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=3)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=3)]"
-    ]
-  },
-  "control play": {
-    "sequence": "000100200003",
-    "complexity": 18,
-    "minimal_programs": [
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]"
-    ]
-  },
-  "Insertion": {
-    "sequence": "012012301234",
-    "complexity": 13,
-    "minimal_programs": [
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-2), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=1)]",
-      "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-2), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=0)), MOVE_AND_PLAY(n=1)]"
-    ]
-  },
-  "Suppression": {
-    "sequence": "012340123012",
-    "complexity": 12,
-    "minimal_programs": [
-      "[REPEAT(n=5, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1))]",
-      "[REPEAT(n=5, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1))]"
-    ]
-  },
-  "Mirror-Rep": {
-    "sequence": "012332100123",
-    "complexity": 14,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
-    ]
-  },
-  "control Mirror-Rep": {
-    "sequence": "012331200123",
-    "complexity": 16,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
-    ]
-  },
-  "Mirror-NoRep": {
-    "sequence": "012321030123",
-    "complexity": 14,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
-    ]
-  },
-  "control Mirror-NoRep": {
-    "sequence": "012320130123",
-    "complexity": 17,
-    "minimal_programs": [
-      "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
-      "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
-    ]
+  "results": {
+    "my_seq_name": {
+      "sequence": "0000000",
+      "complexity": 4,
+      "minimal_programs": [
+        "[REPEAT(n=7, P=[MOVE_AND_PLAY(n=0)])]"
+      ]
+    },
+    "Repetition-2": {
+      "sequence": "010101010101",
+      "complexity": 6,
+      "minimal_programs": [
+        "[REPEAT(n=6, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=3, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1)])])]",
+        "[REPEAT(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1)])])]"
+      ]
+    },
+    "control Repetition-2": {
+      "sequence": "011110010001",
+      "complexity": 19,
+      "minimal_programs": [
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1)]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=1)]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=1)]"
+      ]
+    },
+    "Repetition-3": {
+      "sequence": "012012012012",
+      "complexity": 7,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])])]",
+        "[REPEAT(n=4, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=1))])]",
+        "[REPEAT(n=4, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=1))])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])])])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=1))])])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=1))])])]",
+        "[REPEAT_APPLY_NOTES(n=4, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=0))]",
+        "[REPEAT_APPLY_PEVAL(n=4, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=0))]"
+      ]
+    },
+    "control Repetition-3": {
+      "sequence": "012021120102",
+      "complexity": 20,
+      "minimal_programs": [
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=1)], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2)]"
+      ]
+    },
+    "Repetition-4": {
+      "sequence": "012301230123",
+      "complexity": 6,
+      "minimal_programs": [
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])])]"
+      ]
+    },
+    "control Repetition-4": {
+      "sequence": "012321300312",
+      "complexity": 19,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1)]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1)]"
+      ]
+    },
+    "Repetition-Nested": {
+      "sequence": "001122001122",
+      "complexity": 8,
+      "minimal_programs": [
+        "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))])]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))])]",
+        "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=0))]",
+        "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)])], jump=MOVE(n=0))]"
+      ]
+    },
+    "control NoLocal nested": {
+      "sequence": "012021012021",
+      "complexity": 12,
+      "minimal_programs": [
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)])]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)])]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)])]",
+        "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))]",
+        "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))]"
+      ]
+    },
+    "control NoGlobal nested": {
+      "sequence": "001122002211",
+      "complexity": 16,
+      "minimal_programs": [
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=-1))]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=0)], jump=MOVE(n=-1))]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=2)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=0)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=0)], jump=MOVE(n=2)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)]"
+      ]
+    },
+    "play 4 tokens": {
+      "sequence": "010203010203",
+      "complexity": 13,
+      "minimal_programs": [
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=3)])]"
+      ]
+    },
+    "control play 4 tokens": {
+      "sequence": "010213010213",
+      "complexity": 10,
+      "minimal_programs": [
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=2)])])]"
+      ]
+    },
+    "sub-programs 1": {
+      "sequence": "012301210120",
+      "complexity": 16,
+      "minimal_programs": [
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), REPEAT(n=2, P=[MOVE_AND_PLAY(n=-1)]), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-2)]"
+      ]
+    },
+    "control sub-programs 1": {
+      "sequence": "012302120120",
+      "complexity": 17,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0))]",
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0))]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0))]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0))]"
+      ]
+    },
+    "sub-programs 2": {
+      "sequence": "012301240125",
+      "complexity": 17,
+      "minimal_programs": [
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=0), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=-3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]"
+      ]
+    },
+    "control sub-programs 2": {
+      "sequence": "012302140125",
+      "complexity": 19,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=4), REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=4)], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-3), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=3), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=4)], jump=MOVE(n=1)), MOVE_AND_PLAY(n=3)]"
+      ]
+    },
+    "index i": {
+      "sequence": "010011000111",
+      "complexity": 18,
+      "minimal_programs": [
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0))], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_NOTES(n=2, p=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1)), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0))], jump=MOVE(n=1))]"
+      ]
+    },
+    "control index i": {
+      "sequence": "000111010011",
+      "complexity": 17,
+      "minimal_programs": [
+        "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], appl=MOVE_AND_PLAY(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
+        "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)])], jump=MOVE(n=1)), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)])]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=1)], appl=MOVE_AND_PLAY(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=1)], appl=MOVE_AND_PLAY(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=1)], jump=MOVE(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], appl=MOVE_AND_PLAY(n=1))]",
+        "[REPEAT(n=2, P=[REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=1)], jump=MOVE(n=0))]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0)], jump=MOVE(n=1))]"
+      ]
+    },
+    "play": {
+      "sequence": "000100020003",
+      "complexity": 19,
+      "minimal_programs": [
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-1)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=2, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_NOTES(n=3, p=[MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=3)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-1)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=2), REPEAT_APPLY_PEVAL(n=3, P=[MOVE_AND_PLAY(n=-2)], jump=MOVE(n=0)), MOVE_AND_PLAY(n=3)]"
+      ]
+    },
+    "control play": {
+      "sequence": "000100200003",
+      "complexity": 18,
+      "minimal_programs": [
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-2), REPEAT(n=3, P=[MOVE_AND_PLAY(n=0)]), MOVE_AND_PLAY(n=3)]"
+      ]
+    },
+    "Insertion": {
+      "sequence": "012012301234",
+      "complexity": 13,
+      "minimal_programs": [
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=-2), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=0)), MOVE_AND_PLAY(n=1)]",
+        "[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=-2), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=0)), MOVE_AND_PLAY(n=1)]"
+      ]
+    },
+    "Suppression": {
+      "sequence": "012340123012",
+      "complexity": 12,
+      "minimal_programs": [
+        "[REPEAT(n=5, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=4), REPEAT_APPLY_NOTES(n=2, p=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], appl=MOVE_AND_PLAY(n=-1))]",
+        "[REPEAT(n=5, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=4), REPEAT_APPLY_PEVAL(n=2, P=[REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])], jump=MOVE(n=-1))]"
+      ]
+    },
+    "Mirror-Rep": {
+      "sequence": "012332100123",
+      "complexity": 14,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
+      ]
+    },
+    "control Mirror-Rep": {
+      "sequence": "012331200123",
+      "complexity": 16,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT_APPLY_NOTES(n=2, p=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], appl=MOVE_AND_PLAY(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT_APPLY_PEVAL(n=2, P=[MOVE_AND_PLAY(n=0), MOVE_AND_PLAY(n=-2)], jump=MOVE(n=-1)), MOVE_AND_PLAY(n=0), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
+      ]
+    },
+    "Mirror-NoRep": {
+      "sequence": "012321030123",
+      "complexity": 14,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), REPEAT(n=3, P=[MOVE_AND_PLAY(n=-1)]), MOVE_AND_PLAY(n=3), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
+      ]
+    },
+    "control Mirror-NoRep": {
+      "sequence": "012320130123",
+      "complexity": 17,
+      "minimal_programs": [
+        "[REPEAT(n=4, P=[MOVE_AND_PLAY(n=1)]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]",
+        "[REPEAT(n=2, P=[REPEAT(n=2, P=[MOVE_AND_PLAY(n=1)])]), MOVE_AND_PLAY(n=-1), MOVE_AND_PLAY(n=-2), MOVE_AND_PLAY(n=1), MOVE_AND_PLAY(n=2), MOVE_AND_PLAY(n=-3), REPEAT(n=3, P=[MOVE_AND_PLAY(n=1)])]"
+      ]
+    }
   }
 }

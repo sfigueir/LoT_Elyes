@@ -477,30 +477,62 @@ def printSequence_starting(sequence: str, start: int):
     print()
 
 
-def write_complexities_and_minprog_json(input_json_file: str, output_json_file: str):
+def write_complexities_and_minprog_json(input_json_file: str,
+                                        output_json_file: str):
     """
     Reads a JSON file of the form
-        { "name1": "sequence1", "name2": "sequence2", ... }
-    computes complexities_and_minprog on it, and writes the result as JSON.
 
-    Minimal programs are stored as strings, not decomposed.
+        {
+            "name1": "sequence1",
+            "name2": "sequence2",
+            ...
+        }
+
+    computes complexities_and_minprog, and writes the results to JSON.
+
+    Minimal programs are stored as strings.
     Assumes set_parameters(...) was already called.
     """
+
     with open(input_json_file, "r", encoding="utf-8") as f:
         sequences_with_names = json.load(f)
 
     raw_output = complexities_and_minprog(sequences_with_names)
 
-    json_output = {}
+    results = {}
+
     for name, value in raw_output.items():
         seq, comp, min_programs = value
-        json_output[name] = {
+
+        results[name] = {
             "sequence": seq,
             "complexity": comp,
             "minimal_programs": [str(p) for p in min_programs]
         }
 
-    with open(output_json_file, "w", encoding="utf-8") as f:
-        json.dump(json_output, f, indent=2, ensure_ascii=False)
+    output = {
+        "interpretation": {
+            "description":
+                "Complexities and minimal programs for the input sequences.",
+            "complexity":
+                "The minimum size of a program generating the sequence "
+                "under the loaded LoT configuration.",
+            "minimal_programs":
+                "The list of all minimal programs found for the sequence."
+        },
 
-    return json_output
+        "loaded_config": config.GLOBAL_CONFIG,
+
+        "parameters": {
+            "input_file": input_json_file,
+            "number_of_sequences": len(sequences_with_names),
+            "base": config.BASE
+        },
+
+        "results": results
+    }
+
+    with open(output_json_file, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+    return output
